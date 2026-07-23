@@ -24,7 +24,7 @@ export function TopAppBar({ variant = "default", showBack, title, right }: Props
             <ChevronLeft className="h-5 w-5" />
           </button>
         )}
-        <Link to="/" className="flex items-center gap-2 min-w-0">
+        <Link to="/home" className="flex items-center gap-2 min-w-0">
           <div className="grid place-items-center h-9 w-9 shrink-0 rounded-full bg-primary text-primary-foreground font-display font-bold">
             E
           </div>

@@ -3,7 +3,7 @@ import { Home, Croissant, ShoppingBag, Clock } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 
 const items = [
-  { to: "/", label: "Inicio", icon: Home },
+  { to: "/home", label: "Inicio", icon: Home },
   { to: "/bakery", label: "Bakery", icon: Croissant },
   { to: "/cart", label: "Carrito", icon: ShoppingBag },
   { to: "/orders", label: "Historial", icon: Clock },
@@ -17,8 +17,7 @@ export function BottomNavBar() {
     <nav className="sticky bottom-0 z-30 pb-3 pt-2 px-4">
       <div className="glass-panel rounded-3xl flex items-center justify-between px-2 py-2">
         {items.map(({ to, label, icon: Icon }) => {
-          const active =
-            to === "/" ? pathname === "/" : pathname.startsWith(to);
+          const active = pathname === to || pathname.startsWith(to + "/");
           return (
             <Link
               key={to}
