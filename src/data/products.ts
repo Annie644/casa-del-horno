@@ -32,7 +32,7 @@ export const products: Product[] = [
     id: "sourdough",
     name: "Masa Madre",
     description:
-      "Nuestro pan estrella, fermentado durante 24 horas para lograr una corteza crujiente y una miga alveolada de sabor profundo.",
+      "Nuestro pan estrella, fermentado 24 horas con masa madre viva. Corteza crujiente color caramelo, miga alveolada y aroma tostado que perfuma toda la cocina. Ideal para tostadas, bocadillos o acompañar una buena sopa.",
     price: 6.5,
     category: "breads",
     image: sourdough,
@@ -45,7 +45,7 @@ export const products: Product[] = [
     id: "croissant",
     name: "Croissant de Mantequilla",
     description:
-      "Hojaldre francés elaborado con mantequilla europea, láminas doradas y crujientes por fuera, tiernas por dentro.",
+      "Hojaldre francés elaborado a mano con mantequilla europea AOP. Más de 27 capas doradas que crujen al primer bocado y una miga tierna y aireada por dentro. El clásico perfecto para tu café de la mañana.",
     price: 3.2,
     category: "pastries",
     image: croissant,
@@ -58,7 +58,7 @@ export const products: Product[] = [
     id: "cake",
     name: "Tarta de Chocolate",
     description:
-      "Bizcocho de cacao intenso con ganache oscuro. Una tajada densa y aterciopelada para los amantes del chocolate.",
+      "Bizcocho húmedo de cacao 70% cubierto con ganache oscuro y virutas de chocolate. Denso, aterciopelado y con un final ligeramente amargo. Una tajada intensa para los verdaderos amantes del chocolate.",
     price: 5.9,
     category: "pastries",
     image: cake,
@@ -70,7 +70,7 @@ export const products: Product[] = [
     id: "cinnamon",
     name: "Rollo de Canela",
     description:
-      "Rollos esponjosos con canela de Ceylán y un glaseado suave de vainilla. Ideal para acompañar el café.",
+      "Espirales esponjosas rellenas de canela de Ceylán y azúcar moreno, terminadas con un glaseado suave de vainilla que se derrite tibio. Se sirven recién salidos del horno para acompañar el café.",
     price: 4.2,
     category: "pastries",
     image: cinnamon,
@@ -83,7 +83,7 @@ export const products: Product[] = [
     id: "cookies",
     name: "Galletas de Mantequilla",
     description:
-      "Galletas quebradizas de mantequilla dorada, con notas de vainilla. Perfectas para el té de la tarde.",
+      "Galletas quebradizas horneadas en pequeños lotes, con mantequilla dorada y semillas de vainilla bourbon. Ligeras, con borde caramelizado y un final delicado. Perfectas para el té de la tarde.",
     price: 2.8,
     category: "cookies",
     image: cookies,
@@ -95,7 +95,7 @@ export const products: Product[] = [
     id: "baguette",
     name: "Baguette Tradicional",
     description:
-      "Baguette de corteza fina y crujiente, miga aireada. Elaborada según la receta tradicional francesa.",
+      "Baguette artesanal de corteza fina y crujiente, con miga alveolada y ligeramente ácida. Elaborada según la receta tradicional francesa y horneada sobre piedra para el aroma justo.",
     price: 3.5,
     category: "breads",
     image: baguette,
@@ -107,7 +107,7 @@ export const products: Product[] = [
     id: "coffee",
     name: "Cappuccino de Especialidad",
     description:
-      "Espresso italiano con leche vaporizada y arte latte. Grano de origen único tostado en casa.",
+      "Espresso italiano de grano de origen único tostado en casa, coronado con leche vaporizada sedosa y arte latte. Notas de cacao, avellana y un final dulce y cremoso.",
     price: 3.9,
     category: "drinks",
     image: coffee,
