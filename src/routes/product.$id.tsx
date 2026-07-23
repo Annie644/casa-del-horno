@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, Clock, Flame, ShoppingBag, Heart, Wheat } from "lucide-react";
 import { TopAppBar } from "@/components/TopAppBar";
 import { getProduct } from "@/data/products";
 import { useCart } from "@/lib/cart-context";
@@ -35,72 +35,116 @@ export const Route = createFileRoute("/product/$id")({
 function ProductDetail() {
   const { product } = Route.useLoaderData();
   const [qty, setQty] = useState(1);
+  const [liked, setLiked] = useState(false);
   const { add } = useCart();
   const navigate = useNavigate();
 
   const handleAdd = () => {
     add(product, qty);
-    toast.success(`${product.name} agregado al carrito`, {
-      description: `Cantidad: ${qty}`,
+    toast.success(`${product.name} agregado`, {
+      description: `Cantidad: ${qty} · $${(product.price * qty).toFixed(2)}`,
+      action: { label: "Ver carrito", onClick: () => navigate({ to: "/cart" }) },
     });
+  };
+
+  const handleBuyNow = () => {
+    add(product, qty);
     navigate({ to: "/cart" });
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-background">
       <TopAppBar variant="suppressed" showBack />
 
-      <main className="px-5 pb-32">
+      <main className="pb-40">
         {/* Hero image */}
-        <div className="relative h-80 -mx-5 overflow-hidden rounded-b-[2.5rem] bg-tone-100">
+        <div className="relative h-[320px] overflow-hidden rounded-b-[2.5rem] bg-tone-100">
           <img
             src={product.image}
             alt={product.name}
             className="h-full w-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-tone-900/40 via-transparent to-transparent" />
+          <button
+            onClick={() => setLiked((v) => !v)}
+            aria-label="Guardar favorito"
+            className="absolute top-4 right-4 grid place-items-center h-11 w-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg active:scale-95 transition"
+          >
+            <Heart
+              className={`h-5 w-5 transition ${liked ? "fill-accent text-accent" : "text-tone-700"}`}
+            />
+          </button>
+
+          <div className="absolute bottom-4 left-5">
+            <span className="rounded-full bg-white/95 backdrop-blur-md px-3 py-1.5 text-[11px] font-semibold text-tone-800 shadow-md">
+              🔥 Recién horneado
+            </span>
+          </div>
         </div>
 
-        <div className="mt-5">
+        <div className="px-5 mt-6">
+          {/* Title + price */}
           <div className="flex items-start justify-between gap-4">
-            <h1 className="font-display text-3xl leading-tight">
-              {product.name}
-            </h1>
-            <p className="shrink-0 font-display text-2xl text-accent">
-              ${product.price.toFixed(2)}
-            </p>
-          </div>
-
-          {/* Bento tags */}
-          <div className="mt-4 grid grid-cols-3 gap-2">
-            {product.tags.slice(0, 2).map((t: string, i: number) => (
-              <div
-
-                key={t}
-                className={`rounded-2xl px-3 py-2 text-[11px] font-medium ${
-                  i === 0
-                    ? "col-span-2 bg-primary text-primary-foreground"
-                    : "bg-tone-100 text-tone-800"
-                }`}
-              >
-                {t}
-              </div>
-            ))}
-            <div className="col-span-3 rounded-2xl bg-tone-100 px-3 py-2 text-[11px] font-medium text-tone-800">
-              ⏱ {product.prepTime}
+            <div className="min-w-0">
+              <p className="text-[11px] uppercase tracking-widest text-tone-500 font-medium">
+                {product.category}
+              </p>
+              <h1 className="font-display text-3xl leading-tight mt-1 text-tone-900">
+                {product.name}
+              </h1>
+            </div>
+            <div className="shrink-0 text-right">
+              <p className="text-[10px] uppercase tracking-widest text-tone-500">Precio</p>
+              <p className="font-display text-2xl text-accent leading-tight">
+                ${product.price.toFixed(2)}
+              </p>
             </div>
           </div>
 
-          {/* Description */}
+          {/* Info bento */}
+          <div className="mt-5 grid grid-cols-3 gap-2">
+            <div className="rounded-2xl bg-tone-100 p-3 flex flex-col gap-1">
+              <Clock className="h-4 w-4 text-primary" />
+              <p className="text-[10px] uppercase tracking-wider text-tone-500">Listo en</p>
+              <p className="text-sm font-semibold text-tone-900">{product.prepTime}</p>
+            </div>
+            <div className="rounded-2xl bg-tone-100 p-3 flex flex-col gap-1">
+              <Flame className="h-4 w-4 text-accent" />
+              <p className="text-[10px] uppercase tracking-wider text-tone-500">Horneado</p>
+              <p className="text-sm font-semibold text-tone-900">Hoy</p>
+            </div>
+            <div className="rounded-2xl bg-tone-100 p-3 flex flex-col gap-1">
+              <Wheat className="h-4 w-4 text-tone-700" />
+              <p className="text-[10px] uppercase tracking-wider text-tone-500">Origen</p>
+              <p className="text-sm font-semibold text-tone-900">Local</p>
+            </div>
+          </div>
+
+          {product.tags.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {product.tags.map((t: string) => (
+                <span
+                  key={t}
+                  className="rounded-full bg-primary/10 text-primary px-3 py-1 text-[11px] font-medium"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+
           <section className="mt-6">
-            <h2 className="font-display text-lg">Sobre este producto</h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <h2 className="font-display text-lg text-tone-900">Sobre este producto</h2>
+            <p className="mt-2 text-sm leading-relaxed text-tone-600">
               {product.description}
             </p>
           </section>
 
-          {/* Ingredients — tonal layering */}
           <section className="mt-6">
-            <h2 className="font-display text-lg">Ingredientes</h2>
+            <div className="flex items-baseline justify-between">
+              <h2 className="font-display text-lg text-tone-900">Ingredientes</h2>
+              <span className="text-[11px] text-tone-500">{product.ingredients.length} items</span>
+            </div>
             <div className="mt-3 space-y-1.5">
               {product.ingredients.map((ing: string, i: number) => {
                 const tones = [
@@ -114,43 +158,77 @@ function ProductDetail() {
                 return (
                   <div
                     key={ing}
-                    className={`rounded-2xl px-4 py-3 text-sm font-medium ${tones[i % tones.length]}`}
+                    className={`rounded-2xl px-4 py-3 text-sm font-medium flex items-center gap-3 ${tones[i % tones.length]}`}
                   >
-                    {ing}
+                    <span className="text-xs opacity-60 w-5">0{i + 1}</span>
+                    <span>{ing}</span>
                   </div>
                 );
               })}
             </div>
           </section>
+
+          {/* Inline quantity + Add (always visible in flow) */}
+          <section className="mt-8">
+            <div className="rounded-3xl bg-tone-100 p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-[11px] uppercase tracking-widest text-tone-500">Cantidad</p>
+                  <p className="font-display text-xl text-tone-900 mt-0.5">
+                    ${(product.price * qty).toFixed(2)}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1 rounded-2xl bg-background p-1 shadow-sm">
+                  <button
+                    onClick={() => setQty((q) => Math.max(1, q - 1))}
+                    className="grid place-items-center h-10 w-10 rounded-xl text-tone-800 hover:bg-tone-200 active:scale-95 transition"
+                    aria-label="Disminuir"
+                  >
+                    <Minus className="h-4 w-4" />
+                  </button>
+                  <span className="w-8 text-center font-semibold text-base tabular-nums">
+                    {qty}
+                  </span>
+                  <button
+                    onClick={() => setQty((q) => q + 1)}
+                    className="grid place-items-center h-10 w-10 rounded-xl text-tone-800 hover:bg-tone-200 active:scale-95 transition"
+                    aria-label="Aumentar"
+                  >
+                    <Plus className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-5 gap-2">
+                <button
+                  onClick={handleAdd}
+                  className="col-span-2 rounded-2xl bg-white border border-tone-200 text-tone-900 py-3.5 font-semibold text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition"
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                  Agregar
+                </button>
+                <button
+                  onClick={handleBuyNow}
+                  className="col-span-3 rounded-2xl bg-primary text-primary-foreground py-3.5 font-semibold text-sm shadow-lg shadow-primary/25 active:scale-[0.98] transition"
+                >
+                  Comprar ahora
+                </button>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
 
-      {/* Fixed bottom bar */}
-      <div className="fixed bottom-0 inset-x-0 z-20 pointer-events-none">
-        <div className="mobile-shell px-5 pb-6 pt-3">
-          <div className="pointer-events-auto glass-panel rounded-3xl p-2 flex items-center gap-2">
-            <div className="flex items-center gap-1 rounded-2xl bg-tone-100 p-1">
-              <button
-                onClick={() => setQty((q) => Math.max(1, q - 1))}
-                className="grid place-items-center h-9 w-9 rounded-xl bg-background text-tone-800"
-              >
-                <Minus className="h-4 w-4" />
-              </button>
-              <span className="w-6 text-center font-semibold text-sm">{qty}</span>
-              <button
-                onClick={() => setQty((q) => q + 1)}
-                className="grid place-items-center h-9 w-9 rounded-xl bg-background text-tone-800"
-              >
-                <Plus className="h-4 w-4" />
-              </button>
-            </div>
-            <button
-              onClick={handleAdd}
-              className="flex-1 rounded-2xl bg-primary text-primary-foreground py-3 font-semibold text-sm active:scale-[0.98] transition"
-            >
-              Agregar · ${(product.price * qty).toFixed(2)}
-            </button>
-          </div>
+      {/* Sticky bottom CTA */}
+      <div className="fixed bottom-0 inset-x-0 z-30 pointer-events-none">
+        <div className="mobile-shell px-5 pb-5 pt-6 bg-gradient-to-t from-background via-background/95 to-transparent">
+          <button
+            onClick={handleAdd}
+            className="pointer-events-auto w-full rounded-2xl bg-accent text-accent-foreground py-4 font-semibold text-base shadow-xl shadow-accent/30 flex items-center justify-center gap-2 active:scale-[0.98] transition"
+          >
+            <ShoppingBag className="h-5 w-5" />
+            Agregar al carrito · ${(product.price * qty).toFixed(2)}
+          </button>
         </div>
       </div>
     </div>
