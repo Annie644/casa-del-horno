@@ -25,7 +25,7 @@ function NotFoundComponent() {
         La ruta que buscas no existe.
       </p>
       <Link
-        to="/"
+        to="/home"
         className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
       >
         Volver al inicio
@@ -125,6 +125,7 @@ function AppFrame() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   // Hide bottom nav on login, product detail, checkout, confirmation
   const hideNav =
+    pathname === "/" ||
     pathname === "/login" ||
     pathname.startsWith("/product/") ||
     pathname === "/checkout" ||

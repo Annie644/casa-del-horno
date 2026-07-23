@@ -89,7 +89,7 @@ function ConfirmationPage() {
             Ver mi pedido
           </Link>
           <Link
-            to="/"
+            to="/home"
             className="block rounded-2xl bg-tone-100 text-tone-900 py-4 text-center font-semibold"
           >
             Volver al inicio

@@ -27,7 +27,7 @@ function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate({ to: "/" });
+    navigate({ to: "/home" });
   };
 
   return (
@@ -101,7 +101,7 @@ function LoginPage() {
 
           <p className="mt-6 text-center text-sm text-white/70">
             ¿No tienes cuenta?{" "}
-            <Link to="/" className="text-accent font-semibold">
+            <Link to="/home" className="text-accent font-semibold">
               Regístrate
             </Link>
           </p>
