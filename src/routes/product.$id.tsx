@@ -72,8 +72,9 @@ function ProductDetail() {
 
           {/* Bento tags */}
           <div className="mt-4 grid grid-cols-3 gap-2">
-            {product.tags.slice(0, 2).map((t, i) => (
+            {product.tags.slice(0, 2).map((t: string, i: number) => (
               <div
+
                 key={t}
                 className={`rounded-2xl px-3 py-2 text-[11px] font-medium ${
                   i === 0
@@ -101,7 +102,7 @@ function ProductDetail() {
           <section className="mt-6">
             <h2 className="font-display text-lg">Ingredientes</h2>
             <div className="mt-3 space-y-1.5">
-              {product.ingredients.map((ing, i) => {
+              {product.ingredients.map((ing: string, i: number) => {
                 const tones = [
                   "bg-tone-100 text-tone-800",
                   "bg-tone-200 text-tone-800",
