@@ -134,3 +134,14 @@
   min-height: 100dvh;
   position: relative;
 }
+
+/* Hide scrollbars globally while preserving scroll */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
