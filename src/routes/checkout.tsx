@@ -1,9 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { CreditCard, Wallet, Banknote } from "lucide-react";
+import { CreditCard, Wallet, Banknote, Lock } from "lucide-react";
 import { TopAppBar } from "@/components/TopAppBar";
 import { useCart } from "@/lib/cart-context";
-import heroBakery from "@/assets/hero-bakery.jpg";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -37,37 +36,24 @@ function CheckoutPage() {
   };
 
   return (
-    <div className="relative min-h-[100dvh]">
-      {/* Backdrop image (peeking behind glass) */}
-      <div className="absolute inset-x-0 top-0 h-72 -z-10 overflow-hidden">
-        <img
-          src={heroBakery}
-          alt=""
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-tone-900/40 to-background" />
-      </div>
+    <div className="min-h-[100dvh] bg-tone-50">
+      <TopAppBar showBack />
 
-      <TopAppBar variant="suppressed" showBack />
-
-      <form onSubmit={handleConfirm} className="px-5 pb-40">
-        {/* Header section */}
-        <section className="mt-2 text-white">
-          <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 font-semibold">
+      <form onSubmit={handleConfirm} className="px-5 pb-8">
+        {/* Header */}
+        <section className="mt-2">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-accent font-semibold">
             Paso final
           </p>
-          <h1 className="mt-1 font-display text-3xl">Pago</h1>
-          <p className="mt-1 text-sm text-white/80">
-            {items.length} {items.length === 1 ? "producto" : "productos"} ·
-            listos para hornear
+          <h1 className="mt-1 font-display text-3xl text-tone-900">Pago</h1>
+          <p className="mt-1 text-sm text-tone-600">
+            {items.length} {items.length === 1 ? "producto" : "productos"} · listos para hornear
           </p>
         </section>
 
         {/* Method selection */}
         <section className="mt-6">
-          <h2 className="font-display text-base text-tone-900">
-            Método de pago
-          </h2>
+          <h2 className="font-display text-base text-tone-900">Método de pago</h2>
           <div className="mt-3 grid grid-cols-3 gap-2">
             {methods.map((m) => {
               const Icon = m.icon;
@@ -80,7 +66,7 @@ function CheckoutPage() {
                   className={`flex flex-col items-center gap-2 rounded-2xl p-3 transition ${
                     active
                       ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                      : "bg-card border border-tone-100 text-tone-800"
+                      : "bg-white border border-tone-200 text-tone-800"
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -94,7 +80,7 @@ function CheckoutPage() {
         {/* Payment details */}
         {method === "card" && (
           <section className="mt-5 space-y-3">
-            <h2 className="font-display text-base">Datos de la tarjeta</h2>
+            <h2 className="font-display text-base text-tone-900">Datos de la tarjeta</h2>
             <Field label="Nombre del titular" placeholder="Tu nombre" />
             <Field
               label="Número de tarjeta"
@@ -108,12 +94,12 @@ function CheckoutPage() {
           </section>
         )}
         {method === "cash" && (
-          <section className="mt-5 rounded-2xl bg-tone-100 p-4 text-sm text-tone-800">
+          <section className="mt-5 rounded-2xl bg-white border border-tone-200 p-4 text-sm text-tone-800">
             Paga en efectivo al recibir. Ten el monto exacto listo.
           </section>
         )}
         {method === "wallet" && (
-          <section className="mt-5 rounded-2xl bg-tone-100 p-4 text-sm text-tone-800">
+          <section className="mt-5 rounded-2xl bg-white border border-tone-200 p-4 text-sm text-tone-800">
             Confirma el pago desde tu app de wallet al finalizar.
           </section>
         )}
@@ -122,8 +108,8 @@ function CheckoutPage() {
         <section className="mt-6">
           <div className="glass-panel rounded-3xl p-5">
             <div className="flex items-center justify-between">
-              <p className="font-display text-lg">Resumen</p>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              <p className="font-display text-lg text-tone-900">Resumen</p>
+              <span className="text-[10px] uppercase tracking-widest text-tone-500">
                 Pedido
               </span>
             </div>
@@ -142,35 +128,40 @@ function CheckoutPage() {
                 </div>
               ))}
               {items.length > 3 && (
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-tone-500">
                   +{items.length - 3} más
                 </p>
+              )}
+              {items.length === 0 && (
+                <p className="text-sm text-tone-500">Tu carrito está vacío.</p>
               )}
             </div>
             <div className="mt-3 pt-3 border-t border-tone-200/70 space-y-1.5 text-sm">
               <Row label="Subtotal" value={subtotal} />
               <Row label="Envío" value={shipping} />
-              <div className="flex items-center justify-between pt-2 font-display text-xl">
+              <div className="flex items-center justify-between pt-2 font-display text-xl text-tone-900">
                 <span>Total</span>
                 <span className="text-accent">${total.toFixed(2)}</span>
               </div>
             </div>
           </div>
         </section>
-      </form>
 
-      {/* Fixed CTA */}
-      <div className="fixed bottom-0 inset-x-0 z-20 pointer-events-none">
-        <div className="mobile-shell px-5 pb-6 pt-3">
+        {/* Inline Confirm CTA */}
+        <section className="mt-6 space-y-3">
           <button
-            onClick={handleConfirm}
+            type="submit"
             disabled={items.length === 0}
-            className="pointer-events-auto w-full rounded-2xl bg-accent text-accent-foreground py-4 font-semibold text-base shadow-lg shadow-accent/30 active:scale-[0.98] transition disabled:opacity-50"
+            className="w-full rounded-2xl bg-accent text-accent-foreground py-4 font-semibold text-base shadow-lg shadow-accent/30 active:scale-[0.98] transition disabled:opacity-50 flex items-center justify-center gap-2"
           >
+            <Lock className="h-4 w-4" />
             Confirmar y pagar · ${total.toFixed(2)}
           </button>
-        </div>
-      </div>
+          <p className="text-center text-[11px] text-tone-500">
+            Pago 100% seguro · Transacción encriptada
+          </p>
+        </section>
+      </form>
     </div>
   );
 }
@@ -194,8 +185,8 @@ function Field({
   inputMode?: "numeric" | "text";
 }) {
   return (
-    <label className="block rounded-2xl bg-card border border-tone-100 px-4 py-2.5">
-      <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+    <label className="block rounded-2xl bg-white border border-tone-200 px-4 py-2.5">
+      <span className="text-[10px] uppercase tracking-widest text-tone-500">
         {label}
       </span>
       <input
