@@ -157,7 +157,7 @@ function LoginPage() {
 
         <p className="mt-auto pt-6 text-center text-sm text-tone-600">
           ¿No tienes cuenta?{" "}
-          <Link to="/home" className="text-accent font-semibold">
+          <Link to="/register" className="text-accent font-semibold">
             Regístrate
           </Link>
         </p>

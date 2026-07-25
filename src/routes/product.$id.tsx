@@ -56,7 +56,7 @@ function ProductDetail() {
     <div className="relative bg-background">
       <TopAppBar variant="suppressed" showBack />
 
-      <main className="pb-40">
+      <main className="pb-6">
         {/* Hero image */}
         <div className="relative h-[320px] overflow-hidden rounded-b-[2.5rem] bg-tone-100">
           <img
@@ -219,18 +219,7 @@ function ProductDetail() {
         </div>
       </main>
 
-      {/* Sticky bottom CTA */}
-      <div className="fixed bottom-0 inset-x-0 z-30 pointer-events-none">
-        <div className="mobile-shell px-5 pb-5 pt-6 bg-gradient-to-t from-background via-background/95 to-transparent">
-          <button
-            onClick={handleAdd}
-            className="pointer-events-auto w-full rounded-2xl bg-accent text-accent-foreground py-4 font-semibold text-base shadow-xl shadow-accent/30 flex items-center justify-center gap-2 active:scale-[0.98] transition"
-          >
-            <ShoppingBag className="h-5 w-5" />
-            Agregar al carrito · ${(product.price * qty).toFixed(2)}
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
+
