@@ -123,12 +123,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function AppFrame() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  // Hide bottom nav on login, product detail, checkout, confirmation
+  // Hide bottom nav on onboarding screens only
   const hideNav =
     pathname === "/" ||
     pathname === "/login" ||
-    pathname.startsWith("/product/") ||
-    pathname === "/checkout" ||
+    pathname === "/register" ||
     pathname === "/confirmation";
 
   return (
