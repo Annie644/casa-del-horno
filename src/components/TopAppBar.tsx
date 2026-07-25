@@ -28,19 +28,14 @@ export function TopAppBar({ variant = "default", showBack, title, right }: Props
           <div className="grid place-items-center h-9 w-9 shrink-0 rounded-full bg-primary text-primary-foreground font-display font-bold">
             E
           </div>
-          {variant === "default" && !title && (
-            <div className="min-w-0">
-              <p className="font-display text-base leading-tight truncate">
-                El Buen Horno
-              </p>
-              <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                Panadería artesanal
-              </p>
-            </div>
-          )}
-          {title && (
-            <p className="font-display text-lg truncate">{title}</p>
-          )}
+          <div className="min-w-0">
+            <p className="font-display text-base leading-tight truncate">
+              El Buen Horno
+            </p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              Panadería artesanal
+            </p>
+          </div>
         </Link>
       </div>
       {variant === "default" && right}
