@@ -56,7 +56,7 @@ function ProductDetail() {
     <div className="relative bg-background">
       <TopAppBar variant="suppressed" showBack />
 
-      <main className="pb-40">
+      <main className="pb-6">
         {/* Hero image */}
         <div className="relative h-[320px] overflow-hidden rounded-b-[2.5rem] bg-tone-100">
           <img
