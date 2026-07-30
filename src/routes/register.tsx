@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Mail, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import heroBakery from "@/assets/hero-bakery.jpg";
+import { useUser } from "@/lib/user-context";
 
 export const Route = createFileRoute("/register")({
   head: () => ({

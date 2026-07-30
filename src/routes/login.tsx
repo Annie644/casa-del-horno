@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 import heroBakery from "@/assets/hero-bakery.jpg";
+import { useUser } from "@/lib/user-context";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -23,12 +24,14 @@ export const Route = createFileRoute("/login")({
 
 function LoginPage() {
   const navigate = useNavigate();
+  const { signIn } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    signIn({ name: email.split("@")[0] || "Cliente", email });
     navigate({ to: "/home" });
   };
 

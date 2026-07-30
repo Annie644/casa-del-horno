@@ -14,6 +14,7 @@ import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "../lib/cart-context";
+import { UserProvider } from "../lib/user-context";
 import { BottomNavBar } from "../components/BottomNavBar";
 
 function NotFoundComponent() {
@@ -145,16 +146,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <AppFrame />
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            className:
-              "!glass-panel !rounded-2xl !text-tone-900 !font-medium",
-          }}
-        />
-      </CartProvider>
+      <UserProvider>
+        <CartProvider>
+          <AppFrame />
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              className:
+                "!glass-panel !rounded-2xl !text-tone-900 !font-medium",
+            }}
+          />
+        </CartProvider>
+      </UserProvider>
     </QueryClientProvider>
   );
 }
