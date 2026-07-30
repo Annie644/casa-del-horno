@@ -6,7 +6,7 @@ import sourdough from "@/assets/product-sourdough.jpg";
 export const Route = createFileRoute("/confirmation")({
   head: () => ({
     meta: [
-      { title: "¡Pedido confirmado! · El Buen Horno" },
+      { title: "¡Pedido confirmado! · Casa del Horno" },
       {
         name: "description",
         content: "Tu pedido está en el horno. Gracias por elegirnos.",

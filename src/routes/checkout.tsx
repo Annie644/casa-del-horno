@@ -7,9 +7,9 @@ import { useCart } from "@/lib/cart-context";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Pago · El Buen Horno" },
+      { title: "Pago · Casa del Horno" },
       { name: "description", content: "Completa tu pedido de forma segura." },
-      { property: "og:title", content: "Pago · El Buen Horno" },
+      { property: "og:title", content: "Pago · Casa del Horno" },
       { property: "og:description", content: "Finaliza tu pedido." },
     ],
   }),

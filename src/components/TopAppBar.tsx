@@ -94,7 +94,7 @@ export function TopAppBar({ variant = "default", showBack, title, right }: Props
         )}
         <Link to="/home" className="min-w-0">
           <p className="font-display text-base leading-tight truncate">
-            {title ?? "El Buen Horno"}
+            {title ?? "Casa del Horno"}
           </p>
           <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
             Panadería artesanal

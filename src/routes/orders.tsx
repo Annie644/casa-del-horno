@@ -8,12 +8,12 @@ import { pastOrders } from "@/data/orders";
 export const Route = createFileRoute("/orders")({
   head: () => ({
     meta: [
-      { title: "Historial · El Buen Horno" },
+      { title: "Historial · Casa del Horno" },
       {
         name: "description",
-        content: "Tus pedidos activos y recientes en El Buen Horno.",
+        content: "Tus pedidos activos y recientes en Casa del Horno.",
       },
-      { property: "og:title", content: "Historial · El Buen Horno" },
+      { property: "og:title", content: "Historial · Casa del Horno" },
       { property: "og:description", content: "Tus pedidos anteriores." },
     ],
   }),
