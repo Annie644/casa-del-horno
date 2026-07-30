@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Mail, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import heroBakery from "@/assets/hero-bakery.jpg";
+import { useUser } from "@/lib/user-context";
 
 export const Route = createFileRoute("/register")({
   head: () => ({
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/register")({
 
 function RegisterPage() {
   const navigate = useNavigate();
+  const { signIn } = useUser();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,6 +42,7 @@ function RegisterPage() {
       toast.error("La contraseña debe tener al menos 6 caracteres");
       return;
     }
+    signIn({ name: name || email.split("@")[0] || "Cliente", email });
     toast.success(`¡Bienvenido, ${name || "amigo"}!`);
     navigate({ to: "/home" });
   };
