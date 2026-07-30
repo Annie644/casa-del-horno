@@ -58,7 +58,7 @@ function RegisterPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-tone-900/40 to-tone-900/80" />
         <div className="absolute top-0 left-0 right-0 px-6 pt-12 flex items-center gap-3">
           <div className="grid place-items-center h-11 w-11 rounded-full bg-accent text-accent-foreground font-display text-lg font-bold shadow-lg shadow-accent/30">
-            E
+            C
           </div>
           <div className="text-white">
             <p className="font-display text-lg leading-tight">Casa del Horno</p>
