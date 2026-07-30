@@ -25,6 +25,7 @@ export const Route = createFileRoute("/register")({
 
 function RegisterPage() {
   const navigate = useNavigate();
+  const { signIn } = useUser();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,6 +42,7 @@ function RegisterPage() {
       toast.error("La contraseña debe tener al menos 6 caracteres");
       return;
     }
+    signIn({ name: name || email.split("@")[0] || "Cliente", email });
     toast.success(`¡Bienvenido, ${name || "amigo"}!`);
     navigate({ to: "/home" });
   };
