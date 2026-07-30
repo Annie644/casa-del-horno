@@ -7,13 +7,13 @@ import { categories, products } from "@/data/products";
 export const Route = createFileRoute("/bakery")({
   head: () => ({
     meta: [
-      { title: "Nuestra panadería · El Buen Horno" },
+      { title: "Nuestra panadería · Casa del Horno" },
       {
         name: "description",
         content:
           "Catálogo completo de panes, pasteles, galletas y bebidas artesanales.",
       },
-      { property: "og:title", content: "Nuestra panadería · El Buen Horno" },
+      { property: "og:title", content: "Nuestra panadería · Casa del Horno" },
       {
         property: "og:description",
         content: "Explora todo lo que horneamos hoy.",

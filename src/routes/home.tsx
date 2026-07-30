@@ -8,13 +8,13 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/home")({
   head: () => ({
     meta: [
-      { title: "El Buen Horno · Pan recién horneado" },
+      { title: "Casa del Horno · Pan recién horneado" },
       {
         name: "description",
         content:
           "Descubre nuestros panes, pasteles y bebidas artesanales. Pide desde tu móvil.",
       },
-      { property: "og:title", content: "El Buen Horno" },
+      { property: "og:title", content: "Casa del Horno" },
       {
         property: "og:description",
         content: "Pan recién horneado, del horno a tu puerta.",

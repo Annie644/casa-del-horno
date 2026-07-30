@@ -71,14 +71,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "viewport",
         content: "width=device-width, initial-scale=1, viewport-fit=cover",
       },
-      { title: "El Buen Horno · Panadería artesanal" },
+      { title: "Casa del Horno · Panadería artesanal" },
       {
         name: "description",
         content:
           "Pedidos online de pan recién horneado, pastelería y café de especialidad. Del horno a tu puerta.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "El Buen Horno · Panadería artesanal" },
+      { property: "og:title", content: "Casa del Horno · Panadería artesanal" },
       {
         property: "og:description",
         content:

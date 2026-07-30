@@ -7,15 +7,15 @@ import { useUser } from "@/lib/user-context";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Iniciar sesión · El Buen Horno" },
+      { title: "Iniciar sesión · Casa del Horno" },
       {
         name: "description",
-        content: "Entra a tu cuenta de El Buen Horno para pedir pan artesanal.",
+        content: "Entra a tu cuenta de Casa del Horno para pedir pan artesanal.",
       },
-      { property: "og:title", content: "Iniciar sesión · El Buen Horno" },
+      { property: "og:title", content: "Iniciar sesión · Casa del Horno" },
       {
         property: "og:description",
-        content: "Entra a tu cuenta de El Buen Horno.",
+        content: "Entra a tu cuenta de Casa del Horno.",
       },
     ],
   }),
@@ -52,7 +52,7 @@ function LoginPage() {
             E
           </div>
           <div className="text-white">
-            <p className="font-display text-lg leading-tight">El Buen Horno</p>
+            <p className="font-display text-lg leading-tight">Casa del Horno</p>
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/80">
               Panadería artesanal
             </p>

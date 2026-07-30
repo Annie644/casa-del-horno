@@ -8,15 +8,15 @@ import { useUser } from "@/lib/user-context";
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Crear cuenta · El Buen Horno" },
+      { title: "Crear cuenta · Casa del Horno" },
       {
         name: "description",
-        content: "Regístrate en El Buen Horno para pedir pan artesanal fresco.",
+        content: "Regístrate en Casa del Horno para pedir pan artesanal fresco.",
       },
-      { property: "og:title", content: "Crear cuenta · El Buen Horno" },
+      { property: "og:title", content: "Crear cuenta · Casa del Horno" },
       {
         property: "og:description",
-        content: "Crea tu cuenta en El Buen Horno.",
+        content: "Crea tu cuenta en Casa del Horno.",
       },
     ],
   }),
@@ -61,7 +61,7 @@ function RegisterPage() {
             E
           </div>
           <div className="text-white">
-            <p className="font-display text-lg leading-tight">El Buen Horno</p>
+            <p className="font-display text-lg leading-tight">Casa del Horno</p>
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/80">
               Panadería artesanal
             </p>
