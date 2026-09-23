@@ -72,9 +72,7 @@ function OrdersPage() {
             </div>
             <div className="flex-1">
               <p className="font-display text-base">¿Necesitas ayuda?</p>
-              <p className="text-xs text-muted-foreground">
-                Contacta a nuestro equipo de soporte
-              </p>
+              <p className="text-xs text-muted-foreground">Contacta a nuestro equipo de soporte</p>
             </div>
           </button>
         </section>

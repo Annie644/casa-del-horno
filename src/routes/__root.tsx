@@ -22,9 +22,7 @@ function NotFoundComponent() {
     <div className="mobile-shell flex flex-col items-center justify-center px-6 py-24 text-center">
       <p className="font-display text-7xl text-primary">404</p>
       <p className="mt-4 font-display text-xl">Página no encontrada</p>
-      <p className="mt-2 text-sm text-muted-foreground">
-        La ruta que buscas no existe.
-      </p>
+      <p className="mt-2 text-sm text-muted-foreground">La ruta que buscas no existe.</p>
       <Link
         to="/home"
         className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
@@ -45,9 +43,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="mobile-shell flex flex-col items-center justify-center px-6 py-24 text-center">
       <p className="font-display text-xl">Algo salió del horno</p>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Intenta de nuevo en un momento.
-      </p>
+      <p className="mt-2 text-sm text-muted-foreground">Intenta de nuevo en un momento.</p>
       <div className="mt-6 flex gap-2">
         <button
           onClick={() => {
@@ -81,8 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Casa del Horno · Panadería artesanal" },
       {
         property: "og:description",
-        content:
-          "Pedidos online de pan recién horneado, pastelería y café de especialidad.",
+        content: "Pedidos online de pan recién horneado, pastelería y café de especialidad.",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#f7f1e6" },
@@ -152,8 +147,7 @@ function RootComponent() {
           <Toaster
             position="top-center"
             toastOptions={{
-              className:
-                "!glass-panel !rounded-2xl !text-tone-900 !font-medium",
+              className: "!glass-panel !rounded-2xl !text-tone-900 !font-medium",
             }}
           />
         </CartProvider>

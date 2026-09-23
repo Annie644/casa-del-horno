@@ -41,9 +41,7 @@ function ConfirmationPage() {
             </div>
           </div>
 
-          <h1 className="mt-6 font-display text-3xl leading-tight">
-            ¡Al horno!
-          </h1>
+          <h1 className="mt-6 font-display text-3xl leading-tight">¡Al horno!</h1>
           <p className="mt-2 text-sm text-muted-foreground max-w-xs">
             Tu pedido fue confirmado. Te avisamos cuando esté listo.
           </p>
@@ -58,23 +56,15 @@ function ConfirmationPage() {
             <p className="mt-1 font-display text-2xl">#{orderId}</p>
           </div>
           <div className="rounded-3xl bg-tone-100 p-4">
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              Hora
-            </p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Hora</p>
             <p className="mt-1 font-display text-xl text-tone-900">{time}</p>
           </div>
           <div className="rounded-3xl bg-tone-100 p-4">
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              Estado
-            </p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Estado</p>
             <p className="mt-1 font-display text-xl text-tone-900">Horneando</p>
           </div>
           <div className="col-span-2 relative overflow-hidden rounded-3xl h-40">
-            <img
-              src={sourdough}
-              alt="Pan recién horneado"
-              className="h-full w-full object-cover"
-            />
+            <img src={sourdough} alt="Pan recién horneado" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-tone-900/70 to-transparent" />
             <p className="absolute bottom-3 left-4 font-display text-white text-lg">
               Recién salido del horno

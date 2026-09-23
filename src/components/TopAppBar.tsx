@@ -40,13 +40,9 @@ function UserMenu() {
       {open && (
         <div className="absolute right-0 mt-2 w-52 rounded-2xl glass-panel p-1.5 shadow-xl z-50">
           <div className="px-3 py-2">
-            <p className="text-sm font-semibold truncate">
-              {user?.name || "Invitado"}
-            </p>
+            <p className="text-sm font-semibold truncate">{user?.name || "Invitado"}</p>
             {user?.email && (
-              <p className="text-[11px] text-muted-foreground truncate">
-                {user.email}
-              </p>
+              <p className="text-[11px] text-muted-foreground truncate">{user.email}</p>
             )}
           </div>
           <div className="h-px bg-tone-200 my-1" />

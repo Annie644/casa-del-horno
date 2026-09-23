@@ -53,8 +53,8 @@
   --radius: 1rem;
 
   /* Warm bakery palette — burnt sienna primary, amber accent */
-  --background: oklch(0.975 0.012 75);        /* warm cream */
-  --foreground: oklch(0.24 0.03 45);          /* deep roasted brown */
+  --background: oklch(0.975 0.012 75); /* warm cream */
+  --foreground: oklch(0.24 0.03 45); /* deep roasted brown */
 
   --card: oklch(0.985 0.008 75);
   --card-foreground: oklch(0.24 0.03 45);
@@ -62,16 +62,16 @@
   --popover: oklch(0.985 0.008 75);
   --popover-foreground: oklch(0.24 0.03 45);
 
-  --primary: oklch(0.42 0.09 45);             /* burnt sienna / roasted crust */
+  --primary: oklch(0.42 0.09 45); /* burnt sienna / roasted crust */
   --primary-foreground: oklch(0.98 0.01 75);
 
-  --secondary: oklch(0.93 0.02 65);           /* warm tan */
+  --secondary: oklch(0.93 0.02 65); /* warm tan */
   --secondary-foreground: oklch(0.32 0.05 45);
 
   --muted: oklch(0.94 0.015 70);
   --muted-foreground: oklch(0.48 0.04 55);
 
-  --accent: oklch(0.72 0.16 55);              /* warm amber CTA */
+  --accent: oklch(0.72 0.16 55); /* warm amber CTA */
   --accent-foreground: oklch(0.22 0.03 45);
 
   --destructive: oklch(0.55 0.22 25);
@@ -107,7 +107,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
   }

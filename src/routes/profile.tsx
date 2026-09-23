@@ -83,9 +83,7 @@ function ProfilePage() {
               <Pencil className="h-3.5 w-3.5" />
             </span>
           </div>
-          <h1 className="mt-4 font-display text-3xl text-tone-900">
-            {user?.name || "Mi perfil"}
-          </h1>
+          <h1 className="mt-4 font-display text-3xl text-tone-900">{user?.name || "Mi perfil"}</h1>
           <p className="mt-1 text-sm text-muted-foreground">
             {user?.email || "Completa tus datos personales"}
           </p>

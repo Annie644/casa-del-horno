@@ -11,8 +11,7 @@ export const Route = createFileRoute("/home")({
       { title: "Casa del Horno · Pan recién horneado" },
       {
         name: "description",
-        content:
-          "Descubre nuestros panes, pasteles y bebidas artesanales. Pide desde tu móvil.",
+        content: "Descubre nuestros panes, pasteles y bebidas artesanales. Pide desde tu móvil.",
       },
       { property: "og:title", content: "Casa del Horno" },
       {
@@ -51,9 +50,7 @@ function HomePage() {
       <main className="flex-1 px-5 pb-6">
         <section className="pt-2">
           <p className="text-sm text-muted-foreground">Buenos días,</p>
-          <h1 className="font-display text-3xl leading-tight">
-            ¿Qué horneamos hoy?
-          </h1>
+          <h1 className="font-display text-3xl leading-tight">¿Qué horneamos hoy?</h1>
         </section>
 
         <div className="mt-5 flex items-center gap-3 rounded-2xl bg-tone-100 px-4 py-3">
@@ -81,9 +78,7 @@ function HomePage() {
                 <div className="grid place-items-center h-16 w-16 rounded-2xl bg-gradient-to-br from-tone-100 to-tone-200 text-2xl group-hover:from-tone-200 group-hover:to-tone-300 transition">
                   {c.icon}
                 </div>
-                <span className="text-xs font-medium text-tone-800">
-                  {c.name}
-                </span>
+                <span className="text-xs font-medium text-tone-800">{c.name}</span>
               </Link>
             ))}
           </div>

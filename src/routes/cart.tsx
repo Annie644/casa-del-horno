@@ -54,12 +54,7 @@ function CartPage() {
             {/* Items — no dividers, tonal layering */}
             <div className="mt-5 rounded-3xl overflow-hidden">
               {items.map((item, i) => {
-                const tones = [
-                  "bg-tone-50",
-                  "bg-tone-100",
-                  "bg-tone-200",
-                  "bg-tone-100",
-                ];
+                const tones = ["bg-tone-50", "bg-tone-100", "bg-tone-200", "bg-tone-100"];
                 return (
                   <div
                     key={item.product.id}
@@ -81,21 +76,15 @@ function CartPage() {
                       <div className="mt-2 flex items-center gap-2">
                         <div className="flex items-center gap-1 rounded-full bg-background p-0.5">
                           <button
-                            onClick={() =>
-                              setQty(item.product.id, item.qty - 1)
-                            }
+                            onClick={() => setQty(item.product.id, item.qty - 1)}
                             className="grid place-items-center h-7 w-7 rounded-full text-tone-800"
                             aria-label="Restar"
                           >
                             <Minus className="h-3.5 w-3.5" />
                           </button>
-                          <span className="w-6 text-center text-sm font-semibold">
-                            {item.qty}
-                          </span>
+                          <span className="w-6 text-center text-sm font-semibold">{item.qty}</span>
                           <button
-                            onClick={() =>
-                              setQty(item.product.id, item.qty + 1)
-                            }
+                            onClick={() => setQty(item.product.id, item.qty + 1)}
                             className="grid place-items-center h-7 w-7 rounded-full text-tone-800"
                             aria-label="Sumar"
                           >
@@ -140,23 +129,13 @@ function CartPage() {
   );
 }
 
-function Row({
-  label,
-  value,
-  strong,
-}: {
-  label: string;
-  value: number;
-  strong?: boolean;
-}) {
+function Row({ label, value, strong }: { label: string; value: number; strong?: boolean }) {
   return (
     <div
       className={`flex items-center justify-between ${strong ? "font-display text-lg" : "text-sm text-muted-foreground"}`}
     >
       <span>{label}</span>
-      <span className={strong ? "text-tone-900" : ""}>
-        ${value.toFixed(2)}
-      </span>
+      <span className={strong ? "text-tone-900" : ""}>${value.toFixed(2)}</span>
     </div>
   );
 }

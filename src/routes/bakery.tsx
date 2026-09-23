@@ -10,8 +10,7 @@ export const Route = createFileRoute("/bakery")({
       { title: "Nuestra panadería · Casa del Horno" },
       {
         name: "description",
-        content:
-          "Catálogo completo de panes, pasteles, galletas y bebidas artesanales.",
+        content: "Catálogo completo de panes, pasteles, galletas y bebidas artesanales.",
       },
       { property: "og:title", content: "Nuestra panadería · Casa del Horno" },
       {
@@ -27,8 +26,7 @@ export const Route = createFileRoute("/bakery")({
 
 function BakeryPage() {
   const [active, setActive] = useState("all");
-  const filtered =
-    active === "all" ? products : products.filter((p) => p.category === active);
+  const filtered = active === "all" ? products : products.filter((p) => p.category === active);
 
   return (
     <>
@@ -40,11 +38,12 @@ function BakeryPage() {
             Bread Box · No. 12
           </p>
           <h1 className="mt-2 font-display text-4xl leading-[1.05]">
-            Nuestra<br />panadería.
+            Nuestra
+            <br />
+            panadería.
           </h1>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-            Horneado en piedra cada mañana. Recetas heredadas, ingredientes de
-            temporada.
+            Horneado en piedra cada mañana. Recetas heredadas, ingredientes de temporada.
           </p>
         </section>
 

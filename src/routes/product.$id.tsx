@@ -61,11 +61,7 @@ function ProductDetail() {
       <main className="pb-6">
         {/* Hero image */}
         <div className="relative h-[320px] overflow-hidden rounded-b-[2.5rem] bg-tone-100">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="h-full w-full object-cover"
-          />
+          <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-tone-900/40 via-transparent to-transparent" />
           <button
             onClick={() => setLiked((v) => !v)}
@@ -137,9 +133,7 @@ function ProductDetail() {
 
           <section className="mt-6">
             <h2 className="font-display text-lg text-tone-900">Sobre este producto</h2>
-            <p className="mt-2 text-sm leading-relaxed text-tone-600">
-              {product.description}
-            </p>
+            <p className="mt-2 text-sm leading-relaxed text-tone-600">{product.description}</p>
           </section>
 
           <section className="mt-6">
@@ -220,8 +214,6 @@ function ProductDetail() {
           </section>
         </div>
       </main>
-
     </div>
   );
 }
-

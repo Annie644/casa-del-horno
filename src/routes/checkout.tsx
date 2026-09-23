@@ -111,16 +111,11 @@ function CheckoutPage() {
           <div className="glass-panel rounded-3xl p-5">
             <div className="flex items-center justify-between">
               <p className="font-display text-lg text-tone-900">Resumen</p>
-              <span className="text-[10px] uppercase tracking-widest text-tone-500">
-                Pedido
-              </span>
+              <span className="text-[10px] uppercase tracking-widest text-tone-500">Pedido</span>
             </div>
             <div className="mt-3 space-y-1.5">
               {items.slice(0, 3).map((i) => (
-                <div
-                  key={i.product.id}
-                  className="flex items-center justify-between text-sm"
-                >
+                <div key={i.product.id} className="flex items-center justify-between text-sm">
                   <span className="truncate text-tone-800">
                     {i.qty}× {i.product.name}
                   </span>
@@ -129,11 +124,7 @@ function CheckoutPage() {
                   </span>
                 </div>
               ))}
-              {items.length > 3 && (
-                <p className="text-xs text-tone-500">
-                  +{items.length - 3} más
-                </p>
-              )}
+              {items.length > 3 && <p className="text-xs text-tone-500">+{items.length - 3} más</p>}
               {items.length === 0 && (
                 <p className="text-sm text-tone-500">Tu carrito está vacío.</p>
               )}
@@ -188,9 +179,7 @@ function Field({
 }) {
   return (
     <label className="block rounded-2xl bg-white border border-tone-200 px-4 py-2.5">
-      <span className="text-[10px] uppercase tracking-widest text-tone-500">
-        {label}
-      </span>
+      <span className="text-[10px] uppercase tracking-widest text-tone-500">{label}</span>
       <input
         type="text"
         inputMode={inputMode}

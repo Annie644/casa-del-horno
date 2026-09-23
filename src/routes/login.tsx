@@ -67,7 +67,8 @@ function LoginPage() {
             Recién horneado
           </span>
           <h1 className="font-display text-4xl leading-[1.05] mt-3 drop-shadow-md">
-            Del horno<br />a tu mesa.
+            Del horno
+            <br />a tu mesa.
           </h1>
         </div>
       </div>
@@ -141,7 +142,9 @@ function LoginPage() {
 
         <div className="mt-6 flex items-center gap-3">
           <div className="h-px flex-1 bg-tone-200" />
-          <span className="text-[10px] uppercase tracking-widest text-tone-500">o continúa con</span>
+          <span className="text-[10px] uppercase tracking-widest text-tone-500">
+            o continúa con
+          </span>
           <div className="h-px flex-1 bg-tone-200" />
         </div>
 
