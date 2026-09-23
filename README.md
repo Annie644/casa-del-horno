@@ -1,10 +1,10 @@
-# 🍞 Casa del Horno — App Móvil de Panadería Artesanal
+# Casa del Horno — App Móvil de Panadería Artesanal
 
 **Casa del Horno** es un concepto de aplicación móvil (Mobile-First, ~390px) orientada al comercio electrónico de panadería artesanal de alta gama. El proyecto combina una estética cálida con patrones modernos de interfaz como *Glassmorphism*, *Tonal Layering* y *Grids asimétricos tipo Bento*.
 
 ---
 
-## 🎨 Sistema de Diseño y Enfoque UI/UX
+## Sistema de Diseño y Enfoque UI/UX
 
 * **Estilo Visual:** Inspirado en la calidez de un horno tradicional. Uso de tonos tierra, crema y marrones cálidos como paleta primaria, acompañados de un naranja/ámbar de acento para llamadas a la acción (CTAs) y precios.
 * **Tonal Layering:** Fondo y contenedores estructurados por capas cromáticas de una misma gama para dar profundidad visual sin recargar la pantalla.
@@ -14,7 +14,7 @@
 
 ---
 
-## 📱 Arquitectura de Información y Pantallas
+## Arquitectura de Información y Pantallas
 
 El prototipo abarca un flujo de usuario completo de 8 pantallas interactivas:
 
@@ -29,7 +29,7 @@ El prototipo abarca un flujo de usuario completo de 8 pantallas interactivas:
 
 ---
 
-## 🛠️ Especificaciones Técnicas
+## Especificaciones Técnicas
 
 * **Framework:** React + Tailwind CSS
 * **Estrategia Layout:** Mobile-First (~390px)
@@ -38,7 +38,7 @@ El prototipo abarca un flujo de usuario completo de 8 pantallas interactivas:
 
 ---
 
-## 💻 Desarrollo Local
+## Desarrollo Local
 
 ```sh
 # 1. Clonar el repositorio
@@ -53,5 +53,5 @@ pnpm install
 # 4. Iniciar el servidor de desarrollo
 pnpm dev
 
-💡 **Nota de Portafolio:** 
+ **Nota de Portafolio:** 
 Proyecto diseñado y prototipado enfocado en Experiencia de Usuario (UX) e Interfaz de Usuario (UI), utilizando herramientas de generación asistida para desarrollo ágil y refactorizado manualmente en VS Code.
