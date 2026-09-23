@@ -19,6 +19,8 @@ export const Route = createFileRoute("/home")({
         property: "og:description",
         content: "Pan recién horneado, del horno a tu puerta.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: HomePage,

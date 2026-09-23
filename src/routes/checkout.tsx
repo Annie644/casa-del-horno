@@ -11,6 +11,8 @@ export const Route = createFileRoute("/checkout")({
       { name: "description", content: "Completa tu pedido de forma segura." },
       { property: "og:title", content: "Pago · Casa del Horno" },
       { property: "og:description", content: "Finaliza tu pedido." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CheckoutPage,

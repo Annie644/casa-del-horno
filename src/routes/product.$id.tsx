@@ -21,6 +21,8 @@ export const Route = createFileRoute("/product/$id")({
         { name: "description", content: product.description },
         { property: "og:title", content: `${product.name} · Casa del Horno` },
         { property: "og:description", content: product.description },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary" },
       ],
     };
   },

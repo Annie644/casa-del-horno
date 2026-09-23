@@ -17,6 +17,8 @@ export const Route = createFileRoute("/login")({
         property: "og:description",
         content: "Entra a tu cuenta de Casa del Horno.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: LoginPage,

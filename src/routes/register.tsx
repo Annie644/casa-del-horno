@@ -18,6 +18,8 @@ export const Route = createFileRoute("/register")({
         property: "og:description",
         content: "Crea tu cuenta en Casa del Horno.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: RegisterPage,

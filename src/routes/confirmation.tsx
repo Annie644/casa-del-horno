@@ -13,6 +13,8 @@ export const Route = createFileRoute("/confirmation")({
       },
       { property: "og:title", content: "¡Pedido confirmado!" },
       { property: "og:description", content: "Tu pedido está en el horno." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: ConfirmationPage,
