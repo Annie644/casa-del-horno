@@ -53,7 +53,7 @@ function UserMenu() {
           <button
             onClick={() => {
               setOpen(false);
-              navigate({ to: "/orders" });
+              navigate({ to: "/profile" });
             }}
             className="w-full flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-tone-800 hover:bg-tone-100 transition"
           >
