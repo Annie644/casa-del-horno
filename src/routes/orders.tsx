@@ -15,6 +15,8 @@ export const Route = createFileRoute("/orders")({
       },
       { property: "og:title", content: "Historial · Casa del Horno" },
       { property: "og:description", content: "Tus pedidos anteriores." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: OrdersPage,

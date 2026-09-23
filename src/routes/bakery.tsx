@@ -18,6 +18,8 @@ export const Route = createFileRoute("/bakery")({
         property: "og:description",
         content: "Explora todo lo que horneamos hoy.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: BakeryPage,

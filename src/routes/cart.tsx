@@ -10,6 +10,8 @@ export const Route = createFileRoute("/cart")({
       { name: "description", content: "Revisa tu pedido antes de pagar." },
       { property: "og:title", content: "Carrito · Casa del Horno" },
       { property: "og:description", content: "Tu pedido de panadería." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CartPage,
