@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as OrdersRouteImport } from './routes/orders'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as HomeRouteImport } from './routes/home'
@@ -23,6 +24,11 @@ import { Route as ProductIdRouteImport } from './routes/product.$id'
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrdersRoute = OrdersRouteImport.update({
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
   '/orders': typeof OrdersRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
   '/product/$id': typeof ProductIdRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
   '/orders': typeof OrdersRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
   '/product/$id': typeof ProductIdRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
   '/orders': typeof OrdersRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
   '/product/$id': typeof ProductIdRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/login'
     | '/orders'
+    | '/profile'
     | '/register'
     | '/product/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/login'
     | '/orders'
+    | '/profile'
     | '/register'
     | '/product/$id'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/login'
     | '/orders'
+    | '/profile'
     | '/register'
     | '/product/$id'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
   OrdersRoute: typeof OrdersRoute
+  ProfileRoute: typeof ProfileRoute
   RegisterRoute: typeof RegisterRoute
   ProductIdRoute: typeof ProductIdRoute
 }
@@ -167,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/register'
       fullPath: '/register'
       preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/orders': {
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
   OrdersRoute: OrdersRoute,
+  ProfileRoute: ProfileRoute,
   RegisterRoute: RegisterRoute,
   ProductIdRoute: ProductIdRoute,
 }
