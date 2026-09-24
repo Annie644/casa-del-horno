@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
+import { Mail, Lock, User, Eye, EyeOff, ArrowRight, ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
 import heroBakery from "@/assets/hero-bakery.jpg";
 import { useUser } from "@/lib/user-context";
@@ -55,6 +55,13 @@ function RegisterPage() {
         <img src={heroBakery} alt="Pan artesanal" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-tone-900/40 to-tone-900/80" />
         <div className="absolute top-0 left-0 right-0 px-6 pt-12 flex items-center gap-3">
+          <Link
+            to="/login"
+            aria-label="Volver"
+            className="grid place-items-center h-10 w-10 shrink-0 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25 transition"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </Link>
           <div className="grid place-items-center h-11 w-11 rounded-full bg-accent text-accent-foreground font-display text-lg font-bold shadow-lg shadow-accent/30">
             C
           </div>

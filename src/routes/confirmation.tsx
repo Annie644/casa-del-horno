@@ -29,7 +29,7 @@ function ConfirmationPage() {
 
   return (
     <>
-      <TopAppBar variant="suppressed" />
+      <TopAppBar variant="suppressed" backTo="/home" />
 
       <main className="px-5 pb-10 flex-1 flex flex-col">
         {/* Success illustration */}

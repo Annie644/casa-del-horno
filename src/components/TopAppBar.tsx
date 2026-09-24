@@ -7,6 +7,8 @@ type Props = {
   /** "suppressed" hides nav icons; only brand shows */
   variant?: "default" | "suppressed";
   showBack?: boolean;
+  /** Ruta fija a la que vuelve; si no se indica, retrocede en el historial */
+  backTo?: "/home" | "/login" | "/cart" | "/profile";
   title?: string;
   right?: React.ReactNode;
 };
@@ -73,8 +75,16 @@ function UserMenu() {
   );
 }
 
-export function TopAppBar({ variant = "default", showBack, title, right }: Props) {
+export function TopAppBar({ variant = "default", showBack = true, backTo, title, right }: Props) {
   const router = useRouter();
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    if (backTo) navigate({ to: backTo });
+    // Si se entró directo por URL no hay historial: volver al inicio
+    else if (window.history.length > 1) router.history.back();
+    else navigate({ to: "/home" });
+  };
 
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between gap-3 px-5 pt-4 pb-3 bg-background/80 backdrop-blur-xl">
@@ -82,7 +92,7 @@ export function TopAppBar({ variant = "default", showBack, title, right }: Props
         {showBack && (
           <button
             aria-label="Volver"
-            onClick={() => router.history.back()}
+            onClick={goBack}
             className="grid place-items-center h-10 w-10 shrink-0 rounded-full bg-tone-100 text-tone-800 hover:bg-tone-200 transition"
           >
             <ChevronLeft className="h-5 w-5" />

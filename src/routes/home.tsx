@@ -32,6 +32,7 @@ function HomePage() {
   return (
     <>
       <TopAppBar
+        showBack={false}
         right={
           <button
             onClick={() =>
