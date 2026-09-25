@@ -42,17 +42,20 @@ El prototipo abarca un flujo de usuario completo de 8 pantallas interactivas:
 
 ```sh
 # 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/casa-del-horno.git
+git clone https://github.com/tu-usuario/casa-del-horno-app.git
 
 # 2. Entrar a la carpeta
-cd casa-del-horno
+cd casa-del-horno-app
 
-# 3. Instalar dependencias con pnpm
-pnpm install
+# 3. Instalar dependencias
+npm install
 
 # 4. Iniciar el servidor de desarrollo
-pnpm dev
+npm run dev
 
  **Nota de Portafolio:**
-Proyecto diseñado y prototipado enfocado en Experiencia de Usuario (UX) e Interfaz de Usuario (UI), utilizando herramientas de generación asistida para desarrollo ágil y refactorizado manualmente en VS Code.
+---
+
+> 💡 **Nota de Portafolio:**
+> Proyecto diseñado y prototipado con enfoque en Experiencia de Usuario (UX) e Interfaz de Usuario (UI). Se utilizó **Lovable** como herramienta de generación asistida para acelerar la maquetación inicial, siendo posteriormente refactorizado y limpiado manualmente en **VS Code**.
 ```
