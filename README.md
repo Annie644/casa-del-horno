@@ -26,6 +26,7 @@ El prototipo abarca un flujo de usuario completo de 8 pantallas interactivas:
 6. **Checkout & Pago:** Proceso de pago en 1-Click con selección de método de pago accesible y resumen en cristal (_glassmorphism_).
 7. **Confirmación de Pedido:** Pantalla de éxito visual con detalles de orden y anclaje gráfico.
 8. **Historial de Órdenes:** Tarjetas de seguimiento de pedidos en curso y archivo de compras anteriores.
+9. **Perfil de Usuario:** Gestión de datos personales, métodos de pago guardados, direcciones de entrega y preferencias de cuenta.
 
 ---
 
@@ -53,9 +54,11 @@ npm install
 # 4. Iniciar el servidor de desarrollo
 npm run dev
 
- **Nota de Portafolio:**
+ Nota de Portafolio
 ---
 
-> 💡 **Nota de Portafolio:**
-> Proyecto diseñado y prototipado con enfoque en Experiencia de Usuario (UX) e Interfaz de Usuario (UI). Se utilizó **Lovable** como herramienta de generación asistida para acelerar la maquetación inicial, siendo posteriormente refactorizado y limpiado manualmente en **VS Code**.
+> Nota de Portafolio:
+> Proyecto diseñado y prototipado con enfoque en Experiencia de Usuario (UX) e Interfaz de Usuario (UI).
+Se utilizó Lovable como herramienta de generación asistida para acelerar la maquetación inicial,
+siendo posteriormente refactorizado y limpiado manualmente en VS Code.
 ```
